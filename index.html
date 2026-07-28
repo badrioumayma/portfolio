@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oumayma Badri — AI & ML Engineer</title>
+<meta name="description" content="Oumayma Badri — Computer Science Engineering student specializing in AI, Machine Learning, NLP and Cyber Threat Intelligence.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme">
+  <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 4.5a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1zm0 15a1 1 0 0 1 1 1V22a1 1 0 1 1-2 0v-1.5a1 1 0 0 1 1-1zm9.5-8.5a1 1 0 0 1-1 1H19a1 1 0 1 1 0-2h1.5a1 1 0 0 1 1 1zM5 12a1 1 0 0 1-1 1H2.5a1 1 0 1 1 0-2H4a1 1 0 0 1 1 1zm12.02-6.36a1 1 0 0 1 0 1.42l-1.06 1.06a1 1 0 1 1-1.42-1.42l1.06-1.06a1 1 0 0 1 1.42 0zM8.46 16.9a1 1 0 0 1 0 1.42l-1.06 1.06a1 1 0 1 1-1.42-1.42l1.06-1.06a1 1 0 0 1 1.42 0zm9.56 2.48a1 1 0 0 1-1.42 0l-1.06-1.06a1 1 0 1 1 1.42-1.42l1.06 1.06a1 1 0 0 1 0 1.42zM7.4 7.4a1 1 0 0 1-1.42 0L4.92 6.34a1 1 0 1 1 1.42-1.42L7.4 5.98a1 1 0 0 1 0 1.42zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+  <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21.5 14.5a9 9 0 1 1-10-11 7.5 7.5 0 0 0 10 10z"/></svg>
+</button>
+
+<header class="nav-wrap">
+  <nav class="nav container">
+    <a href="#home" class="logo">OB<span class="dot">.</span></a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero container">
+    <div class="hero-content reveal">
+      <p class="hero-kicker"><span class="pulse-dot"></span> Available for AI / ML opportunities</p>
+      <h1 class="hero-title">Oumayma Badri</h1>
+      <p class="hero-role">
+        <span class="typewriter" id="typewriter"></span><span class="caret">|</span>
+      </p>
+      <p class="hero-desc">
+        Computer Science Engineering student building end-to-end machine learning pipelines —
+        from fine-tuned LLMs and NLP systems to production-ready APIs. Currently focused on
+        <strong>Cyber Threat Intelligence automation</strong>, Retrieval-Augmented Generation,
+        and scalable AI architectures.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="#projects" class="btn btn-ghost">View projects</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/oumayma-badri/" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/badrioumayma" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 0 1 5.01 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="mailto:oumaima.badri@fsb.ucar.tn" class="icon-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5 7.3 5.4a1 1 0 0 0 1 0l7.3-5.4H4.2zM20 7.3l-7.02 5.2a2.5 2.5 0 0 1-2.96 0L4 7.3V18h16V7.3z"/></svg>
+          <span>Email</span>
+        </a>
+        <a href="tel:+21629511358" class="icon-link" aria-label="Phone">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+216 29 511 358</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="orbit-card">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">cti_pipeline.py</span>
+          </div>
+          <pre class="terminal-body"><code><span class="tk-kw">class</span> <span class="tk-cls">CTIPipeline</span>:
+    <span class="tk-kw">def</span> <span class="tk-fn">extract</span>(<span class="tk-var">self</span>, report: <span class="tk-cls">PDF</span>):
+        entities = <span class="tk-var">self</span>.llm.infer(
+            model=<span class="tk-str">"Mistral-7B-QLoRA"</span>,
+            strategy=<span class="tk-str">"chain-of-thought"</span>
+        )
+        graph = enrich(entities,
+            <span class="tk-var">MITRE_ATTACK</span>, <span class="tk-var">MISP</span>)
+        <span class="tk-kw">return</span> to_stix_bundle(graph)
+        <span class="tk-comment"># confidence-scored, explainable</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <p class="section-kicker reveal">01 · About</p>
+    <h2 class="section-title reveal">Turning research into working systems</h2>
+    <div class="about-grid">
+      <p class="about-text reveal">
+        I'm an Computer Science Engineering student at the Faculty of Sciences of Bizerte
+        (Université de Carthage), pursuing a double-diploma Master's degree in parallel.
+        My work sits at the intersection of <strong>Machine Learning, NLP, and backend engineering</strong> —
+        I like building things that go from a research idea to an API a real application can call.
+        Across my internships at Datahorizon, Idealab, and Predictra, I've fine-tuned large language
+        models, built Retrieval-Augmented Generation systems, and shipped full-stack features
+        with React, .NET Core, and Azure. I'm especially driven by problems where AI meets
+        security and data engineering — like automating structured threat intelligence extraction
+        from unstructured reports.
+      </p>
+      <div class="about-facts reveal">
+        <div class="fact-card">
+          <span class="fact-num">3+</span>
+          <span class="fact-label">AI / Full-Stack internships</span>
+        </div>
+        <div class="fact-card">
+          <span class="fact-num">3</span>
+          <span class="fact-label">IBM Professional Certifications</span>
+        </div>
+        <div class="fact-card">
+          <span class="fact-num">3</span>
+          <span class="fact-label">Languages spoken fluently</span>
+        </div>
+        <div class="fact-card">
+          <span class="fact-num">2026</span>
+          <span class="fact-label">Expected graduation</span>
+        </div>
+      </div>
+    </div>
+    <div class="languages reveal">
+      <span class="lang-chip">🇬🇧 English — Fluent</span>
+      <span class="lang-chip">🇫🇷 French — Fluent</span>
+      <span class="lang-chip">🇹🇳 Arabic — Native</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section container">
+    <p class="section-kicker reveal">02 · Experience</p>
+    <h2 class="section-title reveal">Where I've worked</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3>AI Intern — Final Year Project</h3>
+            <span class="timeline-date">Feb 2026 – Jun 2026</span>
+          </div>
+          <p class="timeline-org">Predictra · Toronto, ON (Remote)</p>
+          <p class="timeline-desc">
+            Designed and built an end-to-end AI-powered pipeline automating extraction,
+            structuring, and enrichment of Cyber Threat Intelligence from unstructured PDF
+            security reports, compliant with the STIX 2.1 standard.
+          </p>
+          <ul class="timeline-list">
+            <li>Fine-tuned Mistral-7B and LLaMA 3.1 8B with QLoRA for CTI entity extraction</li>
+            <li>Applied Chain-of-Thought prompting to cut hallucinations and boost accuracy</li>
+            <li>Built a Knowledge Graph integrating MITRE ATT&CK and MISP for threat enrichment</li>
+            <li>Automated entity normalization, relationship extraction & confidence scoring</li>
+            <li>Added an Explainable AI (XAI) module for traceability of extracted intelligence</li>
+            <li>Shipped a FastAPI backend with an Angular visualization interface</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Mistral-7B</span><span class="tag">LLaMA 3.1</span><span class="tag">QLoRA</span>
+            <span class="tag">FastAPI</span><span class="tag">Angular</span><span class="tag">STIX 2.1</span>
+            <span class="tag">Knowledge Graphs</span><span class="tag">XAI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3>AI Intern</h3>
+            <span class="timeline-date">Jun 2025 – Jul 2025</span>
+          </div>
+          <p class="timeline-org">Datahorizon · Tunis, Tunisia</p>
+          <p class="timeline-desc">
+            Contributed to a Generative AI chatbot integrated within Microsoft Teams for Clarins,
+            processing structured and unstructured data for enterprise ML pipelines.
+          </p>
+          <ul class="timeline-list">
+            <li>Helped implement image processing for visual input and multimodal interaction</li>
+            <li>Applied feature engineering and preprocessing techniques on enterprise data</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Generative AI</span><span class="tag">Microsoft Teams</span><span class="tag">Multimodal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3>AI Intern</h3>
+            <span class="timeline-date">Jun 2025 – Jul 2025</span>
+          </div>
+          <p class="timeline-org">Idealab (FSB) · Bizerte, Tunisia</p>
+          <p class="timeline-desc">
+            Designed a Retrieval-Augmented Generation (RAG) system for document retrieval,
+            structuring datasets and optimizing data pipelines.
+          </p>
+          <ul class="timeline-list">
+            <li>Built a RAG pipeline to improve response quality of LLM-based systems</li>
+            <li>Structured and cleaned datasets to optimize retrieval performance</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">RAG</span><span class="tag">LLMs</span><span class="tag">Data Pipelines</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3>Full-Stack Developer Intern</h3>
+            <span class="timeline-date">Jul 2024 – Aug 2024</span>
+          </div>
+          <p class="timeline-org">Datahorizon · Remote</p>
+          <p class="timeline-desc">
+            Built the Employee Attendance Management module of an internal ERP system,
+            end to end across frontend, backend, and DevOps.
+          </p>
+          <ul class="timeline-list">
+            <li>Frontend with React, Material-UI, SharePoint Framework (SPFx) & TypeScript</li>
+            <li>Backend services with .NET Core (C#) and Azure Functions (HTTP triggers)</li>
+            <li>Implemented role-based dashboards for Admin, Manager, and Employee roles</li>
+            <li>Managed CI/CD, repos & boards in Azure DevOps; tested APIs with Postman</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">React</span><span class="tag">.NET Core</span><span class="tag">C#</span>
+            <span class="tag">Azure Functions</span><span class="tag">Azure DevOps</span><span class="tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3>Frontend Developer</h3>
+            <span class="timeline-date">Jul 2023 – Sep 2023</span>
+          </div>
+          <p class="timeline-org">Datahorizon</p>
+          <p class="timeline-desc">
+            Started my journey in industry building frontend features and getting hands-on
+            with production web development practices.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">React</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container">
+    <p class="section-kicker reveal">03 · Projects</p>
+    <h2 class="section-title reveal">Selected work</h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card featured reveal">
+        <div class="project-glow" aria-hidden="true"></div>
+        <span class="project-badge">Flagship · Final Year Project</span>
+        <h3>Cybersecurity Intelligence Extraction System</h3>
+        <p class="project-org">Predictra — Canada, Remote</p>
+        <p class="project-desc">
+          An end-to-end pipeline that reads unstructured PDF security reports and outputs
+          confidence-scored, STIX 2.1-compliant threat intelligence bundles — combining
+          fine-tuned LLMs, a MITRE ATT&CK / MISP knowledge graph, and an explainability layer.
+        </p>
+        <ul class="project-points">
+          <li>NLP pipeline for structured intelligence extraction from cybersecurity data</li>
+          <li>Entity extraction & relationship modeling into a queryable knowledge graph</li>
+          <li>Explainable AI module for traceable, auditable analyst output</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Mistral-7B</span><span class="tag">LLaMA 3.1</span>
+          <span class="tag">Unsloth</span><span class="tag">spaCy</span><span class="tag">PyMuPDF</span>
+          <span class="tag">FastAPI</span><span class="tag">Angular</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <h3>Predictive Modeling for Risk Estimation</h3>
+        <p class="project-desc">
+          Built and evaluated classical ML models to estimate risk, comparing algorithms
+          across accuracy, interpretability, and robustness to noisy features.
+        </p>
+        <ul class="project-points">
+          <li>Logistic Regression, Random Forest and MLP models for prediction tasks</li>
+          <li>Feature engineering and preprocessing pipeline built with Scikit-learn</li>
+          <li>Model evaluation and comparison across standard metrics</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <h3>Email Spam Detection System</h3>
+        <p class="project-desc">
+          A transformer-based text classifier that fine-tunes TinyBERT to separate
+          spam from legitimate email content with strong accuracy.
+        </p>
+        <ul class="project-points">
+          <li>Fine-tuned TinyBERT for binary NLP classification</li>
+          <li>Achieved strong performance versus classical baselines</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag">TinyBERT</span><span class="tag">Transformers</span><span class="tag">PyTorch</span><span class="tag">NLP</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container">
+    <p class="section-kicker reveal">04 · Skills</p>
+    <h2 class="section-title reveal">Tools of the trade</h2>
+
+    <div class="skills-grid">
+      <div class="skill-cat reveal">
+        <h3>Programming</h3>
+        <div class="chip-row"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">TypeScript</span><span class="chip">C#</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Machine Learning & NLP</h3>
+        <div class="chip-row"><span class="chip">Scikit-learn</span><span class="chip">PyTorch</span><span class="chip">Transformers</span><span class="chip">Fine-Tuning</span><span class="chip">QLoRA</span><span class="chip">NLP</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Data Science</h3>
+        <div class="chip-row"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Feature Engineering</span><span class="chip">Predictive Modeling</span><span class="chip">Anomaly Detection</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Cyber Threat Intelligence</h3>
+        <div class="chip-row"><span class="chip">STIX 2.1</span><span class="chip">MITRE ATT&CK</span><span class="chip">MISP</span><span class="chip">Knowledge Graphs</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Databases</h3>
+        <div class="chip-row"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Tools & Cloud</h3>
+        <div class="chip-row"><span class="chip">Git</span><span class="chip">Docker</span><span class="chip">REST APIs</span><span class="chip">Azure DevOps</span><span class="chip">Azure Functions</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Visualization</h3>
+        <div class="chip-row"><span class="chip">Matplotlib</span><span class="chip">Power BI</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION + CERTS -->
+  <section id="education" class="section container">
+    <p class="section-kicker reveal">05 · Education & Certifications</p>
+    <h2 class="section-title reveal">Academic background</h2>
+
+    <div class="edu-grid">
+      <div class="edu-col reveal">
+        <h3 class="edu-col-title">Education</h3>
+        <div class="edu-item">
+          <h4>Master's Degree (Double Diploma) — Computer Science</h4>
+          <p class="edu-meta">Faculty of Sciences of Bizerte, Université de Carthage · 2025 – Nov 2026 (Expected)</p>
+        </div>
+        <div class="edu-item">
+          <h4>Engineering Degree — Computer Science & Data Science</h4>
+          <p class="edu-meta">Faculty of Sciences of Bizerte, Université de Carthage · 2023 – Jun 2026 (Expected)</p>
+        </div>
+        <div class="edu-item">
+          <h4>Integrated Preparatory Cycle</h4>
+          <p class="edu-meta">Faculty of Sciences of Bizerte, Université de Carthage · 2021 – 2023</p>
+        </div>
+      </div>
+      <div class="edu-col reveal">
+        <h3 class="edu-col-title">Certifications</h3>
+        <ul class="cert-list">
+          <li><span class="cert-badge">IBM</span> Data Science Professional</li>
+          <li><span class="cert-badge">IBM</span> AI Engineering Professional</li>
+          <li><span class="cert-badge">IBM</span> RAG and Agentic AI Professional</li>
+          <li><span class="cert-badge">AWS</span> AWS Educate — Machine Learning Foundations</li>
+          <li><span class="cert-badge alt">•</span> Generative AI in Action</li>
+          <li><span class="cert-badge alt">•</span> Exploratory Data Analysis in Python</li>
+          <li><span class="cert-badge alt">•</span> Artificial Intelligence Fundamentals</li>
+          <li><span class="cert-badge alt">•</span> Getting Started with Artificial Intelligence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <p class="section-kicker reveal">06 · Contact</p>
+    <h2 class="section-title reveal">Let's build something together</h2>
+    <p class="contact-lead reveal">
+      Open to AI/ML engineering, NLP, and software engineering opportunities.
+      Feel free to reach out — I usually reply within a day.
+    </p>
+    <div class="contact-grid reveal">
+      <a href="mailto:oumaima.badri@fsb.ucar.tn" class="contact-card">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5 7.3 5.4a1 1 0 0 0 1 0l7.3-5.4H4.2zM20 7.3l-7.02 5.2a2.5 2.5 0 0 1-2.96 0L4 7.3V18h16V7.3z"/></svg>
+        <div><span class="contact-label">Email</span><span class="contact-value">oumaima.badri@fsb.ucar.tn</span></div>
+      </a>
+      <a href="tel:+21629511358" class="contact-card">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+        <div><span class="contact-label">Phone</span><span class="contact-value">+216 29 511 358</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/oumayma-badri/" target="_blank" rel="noopener" class="contact-card">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        <div><span class="contact-label">LinkedIn</span><span class="contact-value">/in/oumayma-badri</span></div>
+      </a>
+      <a href="https://github.com/badrioumayma" target="_blank" rel="noopener" class="contact-card">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 0 1 5.01 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        <div><span class="contact-label">GitHub</span><span class="contact-value">/badrioumayma</span></div>
+      </a>
+      <span class="contact-card contact-card-static">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <div><span class="contact-label">Location</span><span class="contact-value">Tunis, Tunisia</span></div>
+      </span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Oumayma Badri.</span>
+    <span>Built with HTML, CSS & JS.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
