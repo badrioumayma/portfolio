@@ -191,20 +191,24 @@
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-head">
-            <h3>AI Intern</h3>
+            <h3>AI Intern — Medical RAG Diagnostic Assistant</h3>
             <span class="timeline-date">Jun 2025 – Jul 2025</span>
           </div>
           <p class="timeline-org">Idealab (FSB) · Bizerte, Tunisia</p>
           <p class="timeline-desc">
-            Designed a Retrieval-Augmented Generation (RAG) system for document retrieval,
-            structuring datasets and optimizing data pipelines.
+            Designed an agentic Retrieval-Augmented Generation (RAG) system for respiratory pathology,
+            grounding AI-generated diagnostic insights in peer-reviewed medical literature and clinical guidelines.
           </p>
           <ul class="timeline-list">
-            <li>Built a RAG pipeline to improve response quality of LLM-based systems</li>
-            <li>Structured and cleaned datasets to optimize retrieval performance</li>
+            <li>Built a hybrid retrieval pipeline combining dense vector search with lexical retrieval and cross-encoder reranking to improve the relevance and precision of medical evidence</li>
+            <li>Developed a structured biomedical knowledge base using Qdrant with metadata-aware indexing of PubMed literature, enabling disease-, topic-, and publication-specific retrieval</li>
+            <li>Implemented a LangGraph-based reasoning workflow for query analysis, evidence retrieval, verification, response generation, and source citation using an open-source biomedical LLM</li>
+            <li>Developed an evaluation framework measuring Recall@K, MRR, NDCG, faithfulness, answer relevance, citation accuracy, and hallucination rate across respiratory clinical scenarios</li>
+            <li>Built a FastAPI backend and Dockerized application, with an interactive interface for evidence-grounded clinical question answering and transparent source attribution</li>
           </ul>
           <div class="tag-row">
-            <span class="tag">RAG</span><span class="tag">LLMs</span><span class="tag">Data Pipelines</span>
+            <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span><span class="tag">Qdrant</span>
+            <span class="tag">PubMedBERT</span><span class="tag">BioMistral</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
           </div>
         </div>
       </div>
