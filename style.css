@@ -607,24 +607,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .badges-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .badges-count { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint); }
 .badges-wall {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  /* full-bleed: break out of the centered container to span the whole page */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.badges-row { overflow: hidden; }
 .badges-track {
   display: flex;
   gap: 18px;
   width: max-content;
   animation: badges-left var(--dur, 60s) linear infinite;
 }
-.badges-row.right .badges-track { animation-name: badges-right; }
 .badges-wall:hover .badges-track { animation-play-state: paused; }
 @keyframes badges-left  { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 9px)); } }
-@keyframes badges-right { from { transform: translateX(calc(-50% - 9px)); } to { transform: translateX(0); } }
 
 .badge-card {
   width: 340px;
@@ -670,10 +667,6 @@ a.badge-card { color: inherit; text-decoration: none; }
 .badge-icon.aws  { border-radius: 8px 8px 50% 50% / 8px 8px 30% 30%; border: 3px solid #232f3e; background: #f3f4f6; color: #232f3e; --ring: #232f3e; }
 
 @media (max-width: 560px) { .badge-card { width: 280px; } }
-@media (prefers-reduced-motion: reduce) {
-  .badges-track { animation: none; }
-  .badges-row { overflow-x: auto; }
-}
 
 /* ---------- Contact ---------- */
 .contact-lead { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; margin-bottom: 40px; }
