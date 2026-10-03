@@ -122,7 +122,7 @@ typeLoop();
   const card = (b) => `
     <${b.link ? `a href="${b.link}" target="_blank" rel="noopener"` : 'div'} class="badge-card${b.type === 'pro' ? ' featured' : ''}">
       ${b.img
-        ? `<img class="badge-img" src="${b.img}" alt="" loading="lazy" width="120" height="120">`
+        ? `<img class="badge-img" src="${b.img}" alt="" loading="lazy" width="170" height="170">`
         : `<div class="badge-icon ${b.type}"${b.color ? ` style="--sb:${b.color}"` : ''}>
         <span>${b.type === 'aws' ? 'aws' : 'IBM'}<small>${esc(b.label)}</small></span>
       </div>`}
