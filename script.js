@@ -97,8 +97,6 @@ typeLoop();
   // Ordered by priority: professional certificates → capstones → GenAI/LLMs → deep learning → ML → data → foundations.
   // Columns are filled round-robin, so the first items land at the top of each column.
   const badges = [
-    { t: 'IBM AI Engineering Professional Certificate', i: 'Coursera · 13 courses', d: 'Jul 9, 2025', type: 'pro', label: 'AI Eng', link: 'certificates/ibm-ai-engineering.pdf', skills: ['Deep Learning', 'LLMs', 'Fine-Tuning', 'RAG', 'LangChain'] },
-    { t: 'IBM Data Science Professional Certificate', i: 'Coursera · 12 courses', d: 'Mar 1, 2025', type: 'pro', label: 'Data Sci', link: 'certificates/ibm-data-science.pdf', skills: ['Python', 'SQL', 'Data Analysis', 'Machine Learning'] },
     { t: 'AI Capstone Project with Deep Learning', i: 'Coursera', d: 'May 28, 2025', type: 'cap', label: 'Capstone', img: 'img/badges/ai-capstone.png', level: 'Advanced', skills: ['Deep Learning', 'Deep Neural Networks', 'PyTorch'] },
     { t: 'Applied Data Science Capstone', i: 'Coursera', d: 'Feb 25, 2025', type: 'cap', label: 'Capstone', img: 'img/badges/ds-capstone.png', level: 'Advanced', skills: ['Data Collection', 'Data Wrangling', 'EDA', 'Data Visualization'] },
     { t: 'Generative AI Advanced Fine-Tuning for LLMs', i: 'Coursera', d: 'Jul 7, 2025', type: 'ibm', label: 'GenAI', img: 'img/badges/genai-finetuning.png', level: 'Intermediate', skills: ['Instruction-Tuning', 'DPO', 'PPO', 'Reinforcement Learning', 'Hugging Face'] },

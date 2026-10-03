@@ -578,29 +578,35 @@ ul { margin: 0; padding: 0; list-style: none; }
 .edu-item h4 { font-size: 1rem; margin-bottom: 6px; }
 .edu-meta { color: var(--text-muted); font-size: 0.85rem; }
 
-.cert-list { display: flex; flex-direction: column; gap: 14px; }
-.cert-list li {
+.pro-cert {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-}
-.cert-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--bg);
-  background: var(--accent);
-  padding: 3px 8px;
-  border-radius: 5px;
-  flex-shrink: 0;
-}
-.cert-badge.alt {
-  background: transparent;
-  color: var(--accent);
+  gap: 18px;
+  padding: 18px;
+  margin-bottom: 16px;
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface) 60%);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color .25s, transform .25s;
 }
+.pro-cert:hover { border-color: var(--accent); transform: translateY(-3px); }
+.pro-cert-seal {
+  flex-shrink: 0;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  border: 5px solid #1f6feb;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #cfe0ff);
+  box-shadow: inset 0 0 0 2px #fff, 0 8px 20px -8px #1f6feb;
+  display: grid; place-content: center; text-align: center;
+  font-family: var(--font-mono); font-weight: 700; font-size: 1rem; color: #1f3a8a; line-height: 1.1;
+}
+.pro-cert-seal small { display: block; font-size: 0.6rem; font-weight: 500; color: #555; }
+.pro-cert-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.pro-cert-body h4 { font-size: 1rem; }
+.pro-cert-skills { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); }
+.pro-cert-arrow { color: var(--accent); font-size: 1.2rem; align-self: flex-start; }
 
 /* ---------- Badges wall ---------- */
 .badges { margin-top: 56px; }
@@ -672,9 +678,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--font-mono); font-size: 0.64rem; color: var(--accent);
   border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px;
 }
-.badge-icon.pro  { --ring: #1f6feb; border-width: 5px; background: radial-gradient(circle at 35% 30%, #ffffff, #cfe0ff); }
-.badge-card.featured { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: linear-gradient(135deg, var(--accent-soft), var(--surface) 60%); }
-.badge-card.featured h4::after { content: ' ↗'; color: var(--accent); }
 a.badge-card { color: inherit; text-decoration: none; }
 .badge-icon.aws  { border-radius: 8px 8px 50% 50% / 8px 8px 30% 30%; border: 3px solid #232f3e; background: #f3f4f6; color: #232f3e; --ring: #232f3e; }
 
