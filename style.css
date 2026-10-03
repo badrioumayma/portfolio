@@ -54,7 +54,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip (not hidden) so position: sticky still works */
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -388,6 +388,91 @@ ul { margin: 0; padding: 0; list-style: none; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
+
+/* ---------- Stacked pages ----------
+   Each section is a "page" that pins when it reaches the top (or, for tall
+   pages, when its bottom reaches the viewport bottom) while the next page
+   slides up over it. script.js sets --stick and --dim. */
+.page {
+  position: sticky;
+  top: var(--stick, 0px);
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60% 40% at 100% 0%, color-mix(in srgb, var(--blush) 55%, transparent), transparent 70%),
+    var(--bg);
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -24px 60px -30px rgba(90, 25, 40, 0.35);
+  isolation: isolate;
+}
+.page:nth-of-type(even) {
+  background:
+    radial-gradient(ellipse 60% 40% at 0% 0%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 70%),
+    var(--bg-alt);
+}
+.page:first-of-type { border-radius: 0; box-shadow: none; background: transparent; }
+.page > section { transform-origin: 50% 0; transform: scale(var(--shrink, 1)); }
+.page::after {
+  /* dims a page as the next one covers it */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #2a0f17;
+  opacity: var(--dim, 0);
+  pointer-events: none;
+}
+.page-anchor { display: block; height: 0; }
+
+/* side page indicator */
+.page-dots {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.page-dots button {
+  position: relative;
+  width: 10px; height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: height 0.3s ease, background 0.3s ease;
+}
+.page-dots button.active { height: 28px; background: var(--accent); }
+.page-dots button span {
+  position: absolute;
+  right: 20px; top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.page-dots button:hover span, .page-dots button.active span { opacity: 1; }
+.page-counter {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin-top: 4px;
+}
+@media (max-width: 900px) {
+  .page { border-radius: 28px 28px 0 0; }
+  .page-dots { right: 10px; }
+  .page-dots button span, .page-counter { display: none; }
+}
+@media (max-width: 560px) { .page-dots { display: none; } }
 
 /* ---------- Sections ---------- */
 .section { padding: 110px 24px; }

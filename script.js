@@ -40,20 +40,67 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// Active nav link on scroll
-const sections = document.querySelectorAll('main section[id]');
+// Stacked pages: each section pins while the next one slides over it
+const pages = [...document.querySelectorAll('.page')];
 const navLinkEls = document.querySelectorAll('.nav-link');
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinkEls.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
-    }
+// zero-height markers keep each page's natural (un-pinned) position for navigation
+const anchors = pages.map(p => {
+  const m = document.createElement('span');
+  m.className = 'page-anchor';
+  p.before(m);
+  return m;
+});
+const pageTop = (i) => anchors[i].getBoundingClientRect().top + window.scrollY;
+
+const dots = document.createElement('nav');
+dots.className = 'page-dots';
+dots.setAttribute('aria-label', 'Pages');
+dots.innerHTML = pages.map((p) =>
+  `<button type="button" aria-label="${p.dataset.title}"><span>${p.dataset.title}</span></button>`
+).join('') + '<div class="page-counter"></div>';
+document.body.appendChild(dots);
+const dotBtns = [...dots.querySelectorAll('button')];
+const counter = dots.querySelector('.page-counter');
+
+const goTo = (i) => window.scrollTo({ top: pageTop(i), behavior: 'smooth' });
+dotBtns.forEach((btn, i) => btn.addEventListener('click', () => goTo(i)));
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  const i = pages.findIndex(p => p.dataset.page === link.getAttribute('href').slice(1));
+  if (i === -1) return;
+  link.addEventListener('click', (e) => { e.preventDefault(); goTo(i); });
+});
+
+const layoutPages = () => {
+  pages.forEach(p => p.style.setProperty('--stick', `${Math.min(0, window.innerHeight - p.offsetHeight)}px`));
+};
+
+let ticking = false;
+const updatePages = () => {
+  ticking = false;
+  const vh = window.innerHeight;
+  let current = 0;
+  pages.forEach((p, i) => {
+    if (pageTop(i) <= window.scrollY + vh * 0.5) current = i;
+    const next = pages[i + 1];
+    if (!next) return;
+    // 0 while the next page is below the fold, 1 once it fully covers this one
+    const progress = Math.min(Math.max(1 - next.getBoundingClientRect().top / vh, 0), 1);
+    p.style.setProperty('--dim', (progress * 0.35).toFixed(3));
+    p.style.setProperty('--shrink', (1 - progress * 0.06).toFixed(4));
   });
-}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-sections.forEach(sec => sectionObserver.observe(sec));
+  dotBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  counter.textContent = `${current + 1} / ${pages.length}`;
+  const id = pages[current].dataset.page;
+  navLinkEls.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+};
+const requestUpdate = () => { if (!ticking) { ticking = true; requestAnimationFrame(updatePages); } };
+
+layoutPages();
+updatePages();
+window.addEventListener('scroll', requestUpdate, { passive: true });
+window.addEventListener('resize', () => { layoutPages(); requestUpdate(); });
+window.addEventListener('load', () => { layoutPages(); requestUpdate(); });
+new ResizeObserver(() => { layoutPages(); requestUpdate(); }).observe(document.querySelector('main'));
 
 // Typewriter effect
 const roles = [
