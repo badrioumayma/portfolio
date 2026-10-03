@@ -533,6 +533,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -579,6 +581,23 @@ ul { margin: 0; padding: 0; list-style: none; }
   left: 0;
   color: var(--accent);
 }
+
+.project-card .tag-row { margin-top: auto; padding-top: 18px; }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.project-link:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 
 /* ---------- Skills ---------- */
 .skills-grid {
