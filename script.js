@@ -137,5 +137,69 @@ typeLoop();
 
   // One full-width row, ordered by priority; content is duplicated so the loop is seamless.
   const html = badges.map(card).join('');
-  wall.innerHTML = `<div class="badges-track" style="--dur:${badges.length * 5}s">${html}${html.replace(/class="badge-card/g, 'aria-hidden="true" tabindex="-1" class="badge-card')}</div>`;
+  wall.innerHTML = `<div class="badges-track">${html}${html.replace(/class="badge-card/g, 'aria-hidden="true" tabindex="-1" class="badge-card')}</div>`;
+  const track = wall.firstElementChild;
+
+  // JS-driven marquee: drifts at BASE px/s, and dragging, flicking, sideways
+  // wheel or the arrow buttons add velocity that eases back to BASE.
+  const BASE = 45;
+  let offset = 0, velocity = BASE, half = 0, last = performance.now();
+  let dragging = false, dragX = 0, dragT = 0, moved = 0, hovering = false;
+  const measure = () => { half = track.scrollWidth / 2 + 9; };
+  measure();
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+
+  const tick = (now) => {
+    const dt = Math.min((now - last) / 1000, 0.05);
+    last = now;
+    if (!dragging) {
+      const target = hovering ? 0 : BASE;
+      velocity += (target - velocity) * Math.min(dt * 2.5, 1);
+      offset += velocity * dt;
+    }
+    if (half) offset = ((offset % half) + half) % half;
+    track.style.transform = `translateX(${-offset}px)`;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+
+  wall.addEventListener('mouseenter', () => { hovering = true; });
+  wall.addEventListener('mouseleave', () => { hovering = false; });
+
+  wall.addEventListener('pointerdown', (e) => {
+    dragging = true; moved = 0; dragX = e.clientX; dragT = performance.now(); velocity = 0;
+    wall.classList.add('dragging');
+    wall.setPointerCapture(e.pointerId);
+  });
+  wall.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - dragX, now = performance.now();
+    offset -= dx;
+    moved += Math.abs(dx);
+    velocity = -dx / Math.max((now - dragT) / 1000, 0.008);
+    dragX = e.clientX; dragT = now;
+  });
+  const endDrag = () => {
+    if (!dragging) return;
+    dragging = false;
+    wall.classList.remove('dragging');
+    if (performance.now() - dragT > 80) velocity = 0; // held still before release: no fling
+    velocity = Math.max(-4000, Math.min(4000, velocity));
+  };
+  wall.addEventListener('pointerup', endDrag);
+  wall.addEventListener('pointercancel', endDrag);
+  // a drag shouldn't count as a click on a certificate link
+  wall.addEventListener('click', (e) => { if (moved > 6) e.preventDefault(); }, true);
+
+  // sideways trackpad swipe or shift + wheel; plain vertical wheel still scrolls the page
+  wall.addEventListener('wheel', (e) => {
+    const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+    if (!dx) return;
+    e.preventDefault();
+    offset += dx;
+  }, { passive: false });
+
+  document.getElementById('badges-next')?.addEventListener('click', () => { velocity = 1600; });
+  document.getElementById('badges-prev')?.addEventListener('click', () => { velocity = -1600; });
 })();

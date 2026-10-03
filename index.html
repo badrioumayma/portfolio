@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -407,7 +407,11 @@
     <div class="badges reveal">
       <div class="badges-head">
         <h3 class="edu-col-title">Digital badges</h3>
-        <span class="badges-count" id="badges-count"></span>
+        <div class="badges-controls">
+          <span class="badges-count" id="badges-count"></span>
+          <button class="badges-btn" id="badges-prev" type="button" aria-label="Previous badges">&#8249;</button>
+          <button class="badges-btn" id="badges-next" type="button" aria-label="Next badges">&#8250;</button>
+        </div>
       </div>
       <div class="badges-wall" id="badges-wall" aria-label="Earned digital badges"></div>
     </div>
@@ -454,6 +458,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

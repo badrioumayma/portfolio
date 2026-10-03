@@ -618,10 +618,20 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   gap: 18px;
   width: max-content;
-  animation: badges-left var(--dur, 60s) linear infinite;
+  will-change: transform;
 }
-.badges-wall:hover .badges-track { animation-play-state: paused; }
-@keyframes badges-left  { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 9px)); } }
+.badges-wall { cursor: grab; touch-action: pan-y; user-select: none; }
+.badges-wall.dragging { cursor: grabbing; }
+.badges-wall img { -webkit-user-drag: none; pointer-events: none; }
+.badges-controls { display: flex; align-items: center; gap: 8px; }
+.badges-count { margin-right: 8px; }
+.badges-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  font-size: 1.3rem; line-height: 1; cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.badges-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .badge-card {
   width: 270px;
