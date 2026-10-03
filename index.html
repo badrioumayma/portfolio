@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -77,24 +77,12 @@
         </a>
       </div>
     </div>
-    <div class="hero-visual reveal" aria-hidden="true">
-      <div class="orbit-card">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-            <span class="terminal-title">cti_pipeline.py</span>
-          </div>
-          <pre class="terminal-body"><code><span class="tk-kw">class</span> <span class="tk-cls">CTIPipeline</span>:
-    <span class="tk-kw">def</span> <span class="tk-fn">extract</span>(<span class="tk-var">self</span>, report: <span class="tk-cls">PDF</span>):
-        entities = <span class="tk-var">self</span>.llm.infer(
-            model=<span class="tk-str">"Mistral-7B-QLoRA"</span>,
-            strategy=<span class="tk-str">"chain-of-thought"</span>
-        )
-        graph = enrich(entities,
-            <span class="tk-var">MITRE_ATTACK</span>, <span class="tk-var">MISP</span>)
-        <span class="tk-kw">return</span> to_stix_bundle(graph)
-        <span class="tk-comment"># confidence-scored, explainable</span></code></pre>
-        </div>
+    <div class="hero-visual reveal">
+      <div class="portrait">
+        <img src="img/profile.webp" alt="Portrait of Oumayma Badri" width="400" height="400">
+        <span class="portrait-spark s1" aria-hidden="true">✦</span>
+        <span class="portrait-spark s2" aria-hidden="true">✦</span>
+        <span class="portrait-tag" aria-hidden="true">AI / ML Engineer</span>
       </div>
     </div>
   </section>
@@ -465,6 +453,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 </body>
 </html>
