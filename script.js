@@ -8,8 +8,7 @@ const storedTheme = localStorage.getItem('theme');
 if (storedTheme) root.setAttribute('data-theme', storedTheme);
 
 themeToggle.addEventListener('click', () => {
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const current = root.getAttribute('data-theme') || (prefersLight ? 'light' : 'dark');
+  const current = root.getAttribute('data-theme') || 'light';
   const next = current === 'dark' ? 'light' : 'dark';
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
