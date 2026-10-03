@@ -135,21 +135,14 @@ typeLoop();
   const countEl = document.getElementById('badges-count');
   if (countEl) countEl.textContent = `${badges.length} earned`;
 
-  let cols = 0;
-  const render = () => {
-    const n = window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
-    if (n === cols) return;
-    cols = n;
-    const groups = Array.from({ length: n }, () => []);
-    badges.forEach((b, k) => groups[k % n].push(b));
-    wall.innerHTML = groups.map((g, k) => {
-      const html = g.map(card).join('');
-      // content duplicated so the loop is seamless; duration scales with item count
-      return `<div class="badges-col${k % 2 ? ' down' : ''}">
-        <div class="badges-track" style="--dur:${g.length * 5}s">${html}${html.replace(/class="badge-card/g, 'aria-hidden="true" tabindex="-1" class="badge-card')}</div>
-      </div>`;
-    }).join('');
-  };
-  render();
-  window.addEventListener('resize', render);
+  // Two rows scrolling in opposite directions; even-indexed badges go on the top row
+  // so the highest-priority ones appear first.
+  const rows = [badges.filter((_, k) => k % 2 === 0), badges.filter((_, k) => k % 2 === 1)];
+  wall.innerHTML = rows.map((g, k) => {
+    const html = g.map(card).join('');
+    // content duplicated so the loop is seamless; duration scales with item count
+    return `<div class="badges-row${k % 2 ? ' right' : ''}">
+      <div class="badges-track" style="--dur:${g.length * 6}s">${html}${html.replace(/class="badge-card/g, 'aria-hidden="true" tabindex="-1" class="badge-card')}</div>
+    </div>`;
+  }).join('');
 })();
